@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Destination Finder App</title>   
+        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/destinationFinder.css">
+		
+    </head>
+    <body>
+        <h1>Assignement 1 - Destination Finder</h1>
+        <div class="w3-container w3-card-4 w3-half" id="weather-form">
+          <h2 class="w3-text-green">Your Travel Plans</h2>
+          <p>Enter your place of Origin, desired Destination, and preferred Arrival Time</p>
+          <p>      
+            <label class="w3-text-green"><b>Origin</b></label>
+            <input class="w3-input w3-border" id="origin" type="text" required>
+          </p>
+          <p>      
+              <label class="w3-text-green"><b>Destination</b></label>
+              <input class="w3-input w3-border" id="destination" type="text" required>
+          </p>
+		  <p>      
+              <label class="w3-text-green"><b>Arrival Time</b></label>
+              <input class="w3-input w3-border" id="arrival" type="datetime-local" required>
+          </p>
+          <p>      
+              <button class="w3-btn w3-green" id="determineRoute">Get Directions</button>
+          </p>
+        </div>
+        <div  id="error"><!-- error --></div>
+        <!-- Spinner -->
+            <div id="loader"></div>
+        <!-- Route Display -->
+
+		<div class="w3-container w3-card-4 w3-half w3-text-blue" id="direction" style="display: none;">
+			
+		</div>
+        <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		  gapi.load('auth2', init);
+		</script>
+        <script src="destinationFinder.js"></script>
+    </body>
+</html>
