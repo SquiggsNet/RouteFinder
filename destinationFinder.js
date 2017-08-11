@@ -1,3 +1,5 @@
+document.getElementById("determineRoute").addEventListener("click", determineRoute);
+
 function determineRoute() {
     var origin = document.getElementById("origin");
     var destination = document.getElementById("destination");
@@ -44,18 +46,10 @@ function determineRoute() {
         spinner.style.display = "none";
     }
    
-    //var yql = "https://maps.googleapis.com/maps/api/directions/xml?origin=" +origin+ "&destination=" +destination+ "&arrival_time=" +arrival+ //"&mode=transit&key=AIzaSyBJ8VEb5j7TAF-W8fB4vWBdhJalZBt6ZtY"
+    var yql = "https://maps.googleapis.com/maps/api/directions/xml?origin=" +origin+ "&destination=" +destination+ "&arrival_time=" +arrival+ "&mode=transit&key=AIzaSyBJ8VEb5j7TAF-W8fB4vWBdhJalZBt6ZtY";
 
-    //xhttp.open("GET", yql, true);
-    //xhttp.send();
-	
-	var user = gapi.auth2.getAuthInstance().currentUser.get();
-	var oauthToken = user.getAuthResponse().access_token;
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET',
-	  "https://maps.googleapis.com/maps/api/directions/xml?origin=" +origin+ "&destination=" +destination+ "&arrival_time=" +arrival+ "&mode=transit&key=AIzaSyBJ8VEb5j7TAF-W8fB4vWBdhJalZBt6ZtY' +
-	  '?access_token=' + encodeURIComponent(oauthToken.access_token));
-	xhr.send();
+    xhttp.open("GET", yql, true);
+    xhttp.send();
 }
 
 function loadData(response) {
